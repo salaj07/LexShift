@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6366f1;
+  --color-secondary: #22d3ee;
+  --color-background: #0a0a0f;
+  --color-onSurface: #ffffff;
+  --font-rubik: "Rubik", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-onSurface font-inter antialiased overflow-x-hidden;
+    background-image:
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(99, 102, 241, 0.05) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 100% 100%,
+        rgba(34, 211, 238, 0.03) 0%,
+        transparent 50%
+      );
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-rubik;
+  }
+
+  /* Global Visibility Reset for Static Elements (not animated with transforms) */
+  .module-card,
+  .stack-card,
+  .privacy-card,
+  .cta-content,
+  .hero-badge,
+  .hero-desc,
+  .bento-card,
+  .stat-item,
+  .feature-box,
+  .tech-stack {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+}
+
+.bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
